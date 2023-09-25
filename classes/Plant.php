@@ -25,4 +25,16 @@ class Plant
         return $query->fetchAll();
     }
 
+    public function fetchNotesByPlantID(int $plant_id): array
+    {
+        $query = $this->pdo->prepare(query:
+            "SELECT `plant_notes`.`id`, `plant_notes`.`note`, `plant_notes`.`plant_id`
+            FROM `plant_notes`
+            WHERE `plant_notes`.`plant_id` = $plant_id");
+
+        $query->execute();
+
+        return $query->fetchAll();
+    }
+
 }
