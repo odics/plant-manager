@@ -9,8 +9,16 @@ class Plant
     }
     public function fetchAllPlants(): array
     {
-        $query = $this->pdo->prepare(query: 'SELECT `id`, `plant_name`, `date_planted`, `projected_harvest`,
-       `cultivar`, `img_src` FROM `plants`;');
+        $query = $this->pdo->prepare(query:
+            'SELECT `plants`.`id`, `plants`.`plant_name`, `plants`.`date_planted`, 
+            `plants`.`projected_harvest`,
+            `plants`.`cultivar`, 
+            `plants`.`img_src`, 
+            `plants`.`plant_type`,
+            `types_of_plant`.`plant_type`
+            FROM `plants`
+            LEFT JOIN `types_of_plant`
+            ON `plants`.`plant_type` = `types_of_plant`.`id`');
 
         $query->execute();
 
