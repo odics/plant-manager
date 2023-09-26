@@ -7,6 +7,7 @@ class Plant
     {
         $this->pdo = $pdo;
     }
+    
     public function fetchAllPlants(): array
     {
         $query = $this->pdo->prepare(query:
@@ -21,7 +22,6 @@ class Plant
             ON `plants`.`plant_type` = `types_of_plant`.`id`');
 
         $query->execute();
-
         return $query->fetchAll();
     }
 

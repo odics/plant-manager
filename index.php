@@ -2,8 +2,8 @@
 
 require_once 'classes/Plant.php';
 require_once 'utils/db_connection.php';
-global $pdo;
 
+$pdo = getDBConnection();
 $plants = new Plant($pdo);
 
 echo '<pre>';
