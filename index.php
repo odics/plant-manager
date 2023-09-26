@@ -43,7 +43,7 @@ echo '<!DOCTYPE html>
     . renderNavBar() .
     '<div class="container">';
     foreach ($allPlants as $plant) {
-        renderPlantCard(
+        echo renderPlantCard(
             $plant['plant_name'],
             $plant['cultivar'],
             $plant['date_planted'],
