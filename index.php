@@ -39,7 +39,6 @@ echo '<!DOCTYPE html>
       referrerpolicy="no-referrer"
           />
   </head>
-
   <body>'
     . renderNavBar() .
     '<div class="container">';

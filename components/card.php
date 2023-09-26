@@ -1,12 +1,13 @@
 <?php
 
+require_once (__DIR__ . '/../utils/harvest_countdown.php');
 function renderPlantCard(
     string $plantName,
     string $plantCultivar,
     string $datePlanted,
     string $projectedHarvest,
     string $imgSource
-)
+): void
 {
     echo '<div class="plant-card">
         <div class="header">
@@ -46,10 +47,7 @@ function renderPlantCard(
                 <div class="stat-info-progress">
                   <div class="progress-wrapper">
                     <div class="progress-title">HARVEST COUNTDOWN</div>
-                    <div class="days-left">123 DAYS</div>
-                  </div>
-                  <div class="countdown">
-                    <div class="progress"></div>
+                    <div class="days-left">'. getDaysToHarvest($projectedHarvest) . ' DAYS</div>
                   </div>
                 </div>
               </div>
