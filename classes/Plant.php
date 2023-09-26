@@ -7,7 +7,7 @@ class Plant
     {
         $this->pdo = $pdo;
     }
-    
+
     public function fetchAllPlants(): array
     {
         $query = $this->pdo->prepare(query:

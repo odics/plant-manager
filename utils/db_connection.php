@@ -1,7 +1,5 @@
 <?php
 
-
-
 function getDBConnection(): PDO
 {
     $host = 'db';
