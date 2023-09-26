@@ -5,6 +5,7 @@ function renderPlantCard(
     string $plantCultivar,
     string $datePlanted,
     string $projectedHarvest,
+    string $imgSource
 )
 {
     echo '<div class="plant-card">
@@ -22,7 +23,7 @@ function renderPlantCard(
           </div>
         </div>
         <div class="pic-container">
-          <div class="plant-pic"></div>
+          <div class="plant-pic" style="background-image: url(' . $imgSource . ')"></div>
         </div>
         <div class="body">
           <div class="plant-stats">

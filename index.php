@@ -1,18 +1,12 @@
 <?php
 require_once 'components/navbar.php';
+require_once 'components/card.php';
 require_once 'classes/Plant.php';
 require_once 'utils/db_connection.php';
 
 $pdo = getDBConnection();
-$plants = new Plant($pdo);
-
-//echo '<pre>';
-//print_r($plants->fetchAllPlants());
-//echo '</pre>';
-//
-//echo '<pre>';
-//print_r($plants->fetchNotesByPlantID(1));
-//echo '</pre>';
+$plantCollection = new Plant($pdo);
+$allPlants = $plantCollection->fetchAllPlants();
 
 echo '<!DOCTYPE html>
 <html lang="en">
@@ -48,8 +42,15 @@ echo '<!DOCTYPE html>
 
   <body>'
     . renderNavBar() .
-    '<div class="container">
-        Hello
-    </div>
+    '<div class="container">';
+    foreach ($allPlants as $plant) {
+        renderPlantCard(
+            $plant['plant_name'],
+            $plant['cultivar'],
+            $plant['date_planted'],
+            $plant['projected_harvest'],
+            $plant['img_src']);
+    }
+    echo '</div>
   </body>
 </html>';
