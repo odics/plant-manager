@@ -14,10 +14,10 @@ echo '<!DOCTYPE html>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Template</title>
+    <title>Plant Manager</title>
 
-    <meta name="description" content="Template HTML file" />
-    <meta name="author" content="iO Academy" />
+    <meta name="description" content="Plant manager app." />
+    <meta name="author" content="Severin Odic" />
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
