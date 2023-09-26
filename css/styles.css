@@ -1,0 +1,274 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0fcf7;
+  font-family: "Nunito", sans-serif;
+}
+
+h1 {
+  color: #7cb59c;
+}
+
+h2 {
+  color: #92a88f;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.nav-container {
+  width: 20rem;
+  height: 47.2px;
+  background-color: #39a37f;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-container > a {
+  border: 0.8rem solid #39a37f;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #a7e7c1;
+  height: 4.5rem;
+  width: 4.55rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.home-button {
+  font-size: 2rem;
+}
+
+.nav-container > a:nth-child(2) {
+  height: 5.5rem;
+  width: 5.5rem;
+}
+
+.plant-card {
+  position: relative;
+  width: 350px;
+  background-color: #a7e7c1;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0px 4px 6px rgba(102, 102, 102, 0.3);
+  transition: 300ms ease-in-out;
+}
+
+.plant-card.active {
+  /* position: absolute; */
+  /* top: 50%; */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: min-content min-content min-content min-content;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.btn-primary {
+  padding: 8px 10px;
+  background-color: #5b966e;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.btn-secondary {
+  padding: 8px 10px;
+  background-color: #a5c3a5;
+  color: #444444;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border: none;
+}
+
+.text-input {
+  background-color: #f7f7f7;
+  color: #333333;
+  border: 1px solid #cccccc;
+}
+
+.header {
+  width: 100%;
+  height: 150px;
+  align-self: flex-start;
+  background-color: #39a37f;
+  color: #333333;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 60%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-icon {
+  width: 2rem;
+  height: 2rem;
+  background-color: #a7e7c1;
+  color: #39a37f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3rem;
+}
+
+.plant-pic {
+  width: 250px;
+  height: 250px;
+  box-shadow: 0px 4px 6px rgba(102, 102, 102, 0.3);
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+}
+
+.pic-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: -98px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.plant-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.plant-info > span {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.card-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  /* color: #3e7e72; */
+  color: #eeeeee;
+}
+
+.plant-stats {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.stat-card {
+  color: #333333;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: #c2f3dc;
+  border-radius: 15px;
+  padding: 0.8rem;
+}
+
+.stat-header {
+  color: #4c4c4c;
+  font-weight: 900;
+}
+
+.projected-harvest {
+  padding: 0.8rem;
+  color: #333333;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  display: flex;
+  width: 100%;
+  height: auto;
+  background-color: #c2f3dc;
+  border-radius: 15px;
+  grid-column: 1 / 3;
+}
+
+.stat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.stat-info {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #555555;
+}
+
+.stat-info-harvest {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 2rem 0;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #555555;
+}
+
+.countdown {
+  position: relative;
+  height: 20px;
+  width: 100%;
+  background-color: white;
+
+  border-radius: 5px;
+}
+
+.progress {
+  position: absolute;
+  height: 20px;
+  width: 100px;
+  background-color: #39a37f;
+  border-radius: 5px;
+}
+
+.progress-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
