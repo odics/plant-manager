@@ -44,7 +44,7 @@ echo '<!DOCTYPE html>
     '<div class="container">';
     foreach ($allPlants as $plant) {
         echo renderPlantCard(
-            $plant['plant_name'],
+            $plant['plant_type'],
             $plant['cultivar'],
             $plant['date_planted'],
             $plant['projected_harvest'],

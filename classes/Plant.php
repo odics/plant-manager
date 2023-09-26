@@ -52,6 +52,25 @@ class Plant
     {
         $query = $this->pdo->prepare(
             "INSERT INTO `types_of_plant` (`plant_type`) VALUES ('$plantType');");
+
+        $query->execute();
+    }
+
+    public function addNewPlant($plantType, $plantCultivar, $datePlanted, $projectedHarvest, $imgURL): void
+    {
+        $query = $this->pdo->prepare(
+            "INSERT INTO `plants` (`plant_name`, 
+                      `date_planted`, 
+                      `projected_harvest`, 
+                      `cultivar`, 
+                      `img_src`, 
+                      `plant_type`) VALUES ('$plantType', 
+                                            '$datePlanted', 
+                                            '$projectedHarvest', 
+                                            '$plantCultivar',
+                                            '$imgURL',
+                                            '$plantType');");
+
         $query->execute();
     }
 
