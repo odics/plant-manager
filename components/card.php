@@ -7,8 +7,7 @@ function renderPlantCard(
     string $datePlanted,
     string $projectedHarvest,
     string $imgSource
-): void
-{
+): void {
     echo '<div class="plant-card">
         <div class="header">
           <div class="plant-info">
