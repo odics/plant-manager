@@ -20,7 +20,7 @@ h2 {
 
 nav {
   display: flex;
-  width: 100%;
+  width: 100dvw;
   justify-content: center;
   padding: 1.5rem;
 }
@@ -97,6 +97,7 @@ nav {
 
 .container {
   display: grid;
+  width: 100dvw;
   grid-template-columns: min-content min-content min-content min-content;
   justify-items: center;
   justify-content: center;
