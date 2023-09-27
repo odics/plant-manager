@@ -11,7 +11,7 @@ $datePlanted = $_POST['date-planted'];
 $projectedHarvest = $_POST['projected-harvest'];
 $imgURL = $_POST['plant-img'];
 
-if(!$imgURL) {
+if (!$imgURL) {
     $imgURL = "https://cdn-icons-png.flaticon.com/512/628/628283.png";
 }
 

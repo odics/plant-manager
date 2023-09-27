@@ -1,12 +1,12 @@
-const plantCultivarLabel = document.getElementById("cultivar-label");
-const datePlantedLabel = document.getElementById("date-planted-label");
-const projectedHarvestLabel = document.getElementById("proj-harvest-label");
+const plantCultivarLabel = document.querySelector("#cultivar-label");
+const datePlantedLabel = document.querySelector("#date-planted-label");
+const projectedHarvestLabel = document.querySelector("#proj-harvest-label");
 
-const plantCultivarInput = document.getElementById("plant-cultivar");
-const datePlantedInput = document.getElementById("date-planted");
-const projectedHarvestInput = document.getElementById("projected-harvest");
+const plantCultivarInput = document.querySelector("#plant-cultivar");
+const datePlantedInput = document.querySelector("#date-planted");
+const projectedHarvestInput = document.querySelector("#projected-harvest");
 
-const submitButton = document.getElementById("submit-new-plant");
+const submitButton = document.querySelector("#submit-new-plant");
 
 plantCultivarInput.addEventListener("keydown", () => {
     if(plantCultivarLabel.classList.contains("error"))
@@ -62,7 +62,7 @@ submitButton.addEventListener("click", (e) => {
                                      datePlantedInput.value,
                                      projectedHarvestInput.value);
 
-    if(isValidated) {
-        document.getElementById("new-plant-form").submit();
+    if (isValidated) {
+        document.querySelector("#new-plant-form").submit();
     }
 })
