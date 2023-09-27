@@ -1,22 +1,12 @@
-const plantNameLabel = document.getElementById("name-label");
 const plantCultivarLabel = document.getElementById("cultivar-label");
 const datePlantedLabel = document.getElementById("date-planted-label");
 const projectedHarvestLabel = document.getElementById("proj-harvest-label");
 
-const plantNameInput = document.getElementById("plant-name");
 const plantCultivarInput = document.getElementById("plant-cultivar");
 const datePlantedInput = document.getElementById("date-planted");
 const projectedHarvestInput = document.getElementById("projected-harvest");
 
 const submitButton = document.getElementById("submit-new-plant");
-
-plantNameInput.addEventListener("keydown", () => {
-    if(plantNameLabel.classList.contains("error"))
-    {
-        plantNameLabel.classList.remove("error");
-        plantNameLabel.innerHTML = "Plant name";
-    }
-})
 
 plantCultivarInput.addEventListener("keydown", () => {
     if(plantCultivarLabel.classList.contains("error"))
@@ -42,18 +32,12 @@ projectedHarvestInput.addEventListener("change", () => {
     }
 })
 
-const validateForm = (name, cultivar, datePlanted, projectedHarvest) => {
+const validateForm = (cultivar, datePlanted, projectedHarvest) => {
     let isValidated = true;
-
-    if(!name) {
-        plantNameLabel.classList.add("error");
-        plantNameLabel.innerHTML = "Plant name is required";
-        isValidated = false;
-    }
 
     if (!cultivar) {
         plantCultivarLabel.classList.add("error");
-        plantCultivarLabel.innerHTML = "Plant cultivar name is required";
+        plantCultivarLabel.innerHTML = "Cultivar name is required";
         isValidated = false;
     }
 
@@ -73,7 +57,7 @@ const validateForm = (name, cultivar, datePlanted, projectedHarvest) => {
 }
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
-    const isValidated = validateForm(plantNameInput.value,
+    const isValidated = validateForm(
                                      plantCultivarInput.value,
                                      datePlantedInput.value,
                                      projectedHarvestInput.value);
