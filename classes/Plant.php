@@ -64,12 +64,13 @@ class Plant
                       `projected_harvest`, 
                       `cultivar`, 
                       `img_src`, 
-                      `plant_type`) VALUES ('$plantType', 
-                                            '$datePlanted', 
-                                            '$projectedHarvest', 
-                                            '$plantCultivar',
-                                            '$imgURL',
-                                            '$plantType');");
+                      `plant_type`) 
+                    VALUES ('$plantType', 
+                            '$datePlanted', 
+                            '$projectedHarvest', 
+                            '$plantCultivar',
+                            '$imgURL',
+                            '$plantType');");
 
         $query->execute();
     }
