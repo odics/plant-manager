@@ -138,6 +138,7 @@ nav {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   border: 1px solid #7bc7a4;
+  text-decoration: none;
 }
 
 .text-input {

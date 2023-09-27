@@ -5,7 +5,6 @@ require_once '../utils/db_connection.php';
 $pdo = getDBConnection();
 $plant = new Plant($pdo);
 
-
 $plantName = $_POST['plant-name'];
 $plantCultivar = $_POST['plant-cultivar'];
 $datePlanted = $_POST['date-planted'];

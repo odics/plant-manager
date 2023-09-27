@@ -43,7 +43,7 @@ $allPlants = $plantCollection->fetchAllPlants();
 </head>
 <body>
 <?php
-renderNavBar() ?>
+require_once 'components/navbar.php' ?>
 <div class="container">
     <?php
     foreach ($allPlants as $plant) {

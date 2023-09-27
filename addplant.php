@@ -44,7 +44,7 @@ $allPlantTypes = $plantCollection->fetchPlantTypes();
 </head>
 <body>
 <?php
-renderNavBar() ?>
+require_once 'components/navbar.php' ?>
 <div class="form-container">
     <div class="form-card">
         <div class="form-header">
@@ -93,7 +93,7 @@ renderNavBar() ?>
                 </div>
                 <div class="button-group">
                     <button class="btn-primary" id="submit-new-plant">Submit</button>
-                    <button class="btn-secondary">Cancel</button>
+                    <a class="btn-secondary" href="index.php">Cancel</a>
                 </div>
             </form>
         </div>
