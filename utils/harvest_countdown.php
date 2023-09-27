@@ -14,6 +14,10 @@ function getDaysToHarvest(string $projectedHarvest): string
             return substr($date_to_string, -1) . " DAYS";
         }
     } else {
-        return $days_to_harvest->format('%m MONTHS AND %d DAY(S)');
+        if (explode(" ", $date_to_string)[1] <= 1) {
+            return $days_to_harvest->format('%m MONTHS AND %d DAY');
+        } else {
+            return $days_to_harvest->format('%m MONTHS AND %d DAYS');
+        }
     }
 }

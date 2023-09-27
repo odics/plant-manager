@@ -2,4 +2,4 @@
 
 require_once 'utils/harvest_countdown.php';
 
-echo getDaysToHarvest("2023-09-29");
+echo getDaysToHarvest("2023-11-12");
