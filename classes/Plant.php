@@ -51,7 +51,8 @@ class Plant
     public function addPlantType($plantType): void
     {
         $query = $this->pdo->prepare(
-            "INSERT INTO `types_of_plant` (`plant_type`) VALUES (?);");
+            "INSERT INTO `types_of_plant` (`plant_type`) VALUES (?);"
+        );
 
         $query->execute($plantType);
     }
@@ -65,7 +66,8 @@ class Plant
                       `cultivar`, 
                       `img_src`, 
                       `plant_type`) 
-                    VALUES (?, ?, ?, ?, ?, ?);");
+                    VALUES (?, ?, ?, ?, ?, ?);"
+        );
 
         $params = [
             $plantType,
@@ -78,5 +80,4 @@ class Plant
 
         $query->execute($params);
     }
-
 }
