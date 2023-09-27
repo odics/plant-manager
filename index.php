@@ -9,6 +9,16 @@ require_once 'utils/db_connection.php';
 $pdo = getDBConnection();
 $plantCollection = new Plant($pdo);
 $allPlants = $plantCollection->fetchAllPlants();
+$modalTitle = "Delete plant?";
+$modalBody = '<div class="card-text"></div>
+                    <div class="plant-type-buttons">
+                        <form method="POST" action="forms/delete-plant.php" id="delete-plant">
+                            <input type="hidden" value="test" name ="plantID" id="plantID">
+                            <button class="btn-primary" id="delete-plant">Delete</button>
+                            <button class="btn-secondary" id="modal-cancel">Cancel</button>
+                        </form>
+                    </div>
+                </div>'
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +72,7 @@ require_once 'components/navbar.php' ?>
     ?>
 </div>
 <?php
-echo renderModal();
+echo renderModal($modalTitle, $modalBody);
 ?>
 </body>
 </html>
