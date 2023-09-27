@@ -96,7 +96,6 @@ nav {
 .container {
   display: grid;
   width: 100dvw;
-  /*grid-template-columns: min-content min-content min-content min-content;*/
   grid-template-columns: repeat(auto-fit, minmax(22rem, min-content));
   justify-items: center;
   justify-content: center;
