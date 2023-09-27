@@ -80,4 +80,13 @@ class Plant
 
         $query->execute($params);
     }
+
+    public function deletePlant($plantID): void
+    {
+        $query = $this->pdo->prepare(
+            "DELETE FROM `plants` WHERE `id` = '$plantID';"
+        );
+
+        $query->execute();
+    }
 }

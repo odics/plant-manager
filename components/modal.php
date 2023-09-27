@@ -12,8 +12,11 @@ function renderModal(string $modalTitle = '', string $modalBody = ''): string
                 <div class="form-card-body">
                 <div class="card-text"></div>
                     <div class="plant-type-buttons">
-                        <button class="btn-primary" id="delete-plant">Delete</button>
-                        <button class="btn-secondary" id="modal-cancel">Cancel</button>
+                        <form method="POST" action="forms/delete-plant.php" id="delete-plant">
+                            <input type="hidden" value="test" name ="plantID" id="plantID">
+                            <button class="btn-primary" id="delete-plant">Delete</button>
+                            <button class="btn-secondary" id="modal-cancel">Cancel</button>
+                        </form>
                     </div>
                 </div>
             </div>
