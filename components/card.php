@@ -47,7 +47,7 @@ function renderPlantCard(
                 <div class="stat-info-progress">
                   <div class="progress-wrapper">
                     <div class="progress-title">HARVEST COUNTDOWN</div>
-                    <div class="days-left">'. getDaysToHarvest($projectedHarvest) . ' DAYS</div>
+                    <div class="days-left">'. getDaysToHarvest($projectedHarvest) . '</div>
                   </div>
                 </div>
               </div>
