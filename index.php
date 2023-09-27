@@ -56,7 +56,9 @@ $modalBody = '<div class="card-text"></div>
 </head>
 <body>
 <?php
-require_once 'components/navbar.php' ?>
+require_once 'components/navbar.php';
+echo renderModal($modalTitle, $modalBody); ?>
+
 <div class="container">
     <?php
     foreach ($allPlants as $plant) {
@@ -71,8 +73,5 @@ require_once 'components/navbar.php' ?>
     }
     ?>
 </div>
-<?php
-echo renderModal($modalTitle, $modalBody);
-?>
 </body>
 </html>

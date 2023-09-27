@@ -88,8 +88,6 @@ nav {
 }
 
 .plant-card.active {
-  /* position: absolute; */
-  /* top: 50%; */
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 99;
@@ -98,11 +96,12 @@ nav {
 .container {
   display: grid;
   width: 100dvw;
-  grid-template-columns: min-content min-content min-content min-content;
+  /*grid-template-columns: min-content min-content min-content min-content;*/
+  grid-template-columns: repeat(auto-fit, minmax(22rem, min-content));
   justify-items: center;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 1.5rem;
   gap: 2rem;
 }
 
@@ -397,7 +396,8 @@ label {
 }
 
 .modal-overlay {
-  position: absolute;
+  z-index: 3;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -411,7 +411,8 @@ label {
 }
 
 .modal {
-  position: absolute;
+  z-index: 4;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
