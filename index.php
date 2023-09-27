@@ -2,6 +2,7 @@
 
 require_once 'components/navbar.php';
 require_once 'components/card.php';
+require_once 'components/modal.php';
 require_once 'classes/Plant.php';
 require_once 'utils/db_connection.php';
 
@@ -29,6 +30,8 @@ $allPlants = $plantCollection->fetchAllPlants();
     <link rel="apple-touch-icon" href="images/favicon.png"/>
 
     <script defer src="js/index.js"></script>
+    <script defer src="js/delete-plant.js"></script>
+
     <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap"
@@ -52,10 +55,14 @@ require_once 'components/navbar.php' ?>
             $plant['cultivar'],
             $plant['date_planted'],
             $plant['projected_harvest'],
-            $plant['img_src']
+            $plant['img_src'],
+            $plant['id']
         );
     }
     ?>
 </div>
+<?php
+echo renderModal();
+?>
 </body>
 </html>

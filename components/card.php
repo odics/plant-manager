@@ -6,7 +6,8 @@ function renderPlantCard(
     string $plantCultivar,
     string $datePlanted,
     string $projectedHarvest,
-    string $imgSource
+    string $imgSource,
+    int $id
 ): string {
     return '<div class="plant-card">
         <div class="header">
@@ -14,10 +15,10 @@ function renderPlantCard(
             <span>' . $plantName . '</span>
             <div class="card-icons">
               <div class="header-icon">
-                <i class="fa-regular fa-pen-to-square"></i>
+                <i class="delete fa-regular fa-pen-to-square"></i>
               </div>
               <div class="header-icon">
-                <i class="fa-solid fa-trash"></i>
+                <i class="delete fa-solid fa-trash" data-plant-id="' . $id . '" data-plant-name="'. $plantName . '"></i>
               </div>
             </div>
           </div>
