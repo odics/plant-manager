@@ -25,7 +25,7 @@ datePlantedInput.addEventListener("change", () => {
 })
 
 projectedHarvestInput.addEventListener("change", () => {
-    if(projectedHarvestLabel.classList.contains("error"))
+    if (projectedHarvestLabel.classList.contains("error"))
     {
         projectedHarvestLabel.classList.remove("error");
         projectedHarvestLabel.innerHTML = "Projected harvest";
