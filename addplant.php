@@ -59,7 +59,11 @@ renderNavBar() ?>
                             <select id="plant-name" name="plant-name">
                                 <?php
                                 foreach ($allPlantTypes as $plantType) {
-                                    echo '<option value=' . $plantType['id'] . '>' . $plantType['plant_type'] . '</option>';
+                                    echo '<option value='
+                                        . $plantType['id']
+                                        . '>'
+                                        . $plantType['plant_type']
+                                        . '</option>';
                                 } ?>
                             </select>
                             <button class="btn-new-plant-type" id="add-plant-type">New</button>
@@ -95,23 +99,7 @@ renderNavBar() ?>
         </div>
     </div>
 </div>
-<div class="modal-overlay" id="modal-overlay"></div>
-<div class="modal" id="modal">
-    <div class="form-card new-plant">
-        <div class="form-header">
-            Add New Plant Type
-        </div>
-        <div class="form-card-body">
-            <form class="plant-type-form" action="forms/add-plant-type.php" method="POST">
-                <label for="plant-type">Enter new plant type</label>
-                <input type="text" id="plant-type" name="plant-type">
-                <div class="plant-type-buttons">
-                    <button class="btn-primary" id="add-new-type">Add plant type</button>
-                    <button class="btn-secondary" id="modal-cancel">Cancel</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+<?php
+require_once 'components/modal.php' ?>
 </body>
 </html>
