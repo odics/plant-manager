@@ -20,8 +20,7 @@ require_once 'components/navbar.php';
     <link rel="shortcut icon" href="images/favicon.png"/>
     <link rel="apple-touch-icon" href="images/favicon.png"/>
 
-    <script defer src="js/validator.js"></script>
-    <script defer src="js/add-plant-type.js"></script>
+    <script defer src="js/search.js"></script>
 
     <link
             rel="stylesheet"
