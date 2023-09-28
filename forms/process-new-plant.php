@@ -18,3 +18,4 @@ if (!$imgURL) {
 $plant->addNewPlant($plantName, $plantCultivar, $datePlanted, $projectedHarvest, $imgURL);
 
 header('Location: ../index.php');
+
