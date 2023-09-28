@@ -3,10 +3,22 @@
 require_once 'components/navbar.php';
 require_once 'classes/Plant.php';
 require_once 'utils/db_connection.php';
+require_once 'components/modal.php';
 
 $pdo = getDBConnection();
 $plantCollection = new Plant($pdo);
 $allPlantTypes = $plantCollection->fetchPlantTypes();
+
+$modalTitle = 'Add new plant type';
+$modalBody = '
+<form class="plant-type-form" id="plant-type-form" action="forms/add-plant-type.php" method="POST">
+    <label for="plant-type" id="plant-type-label">Enter new plant type</label>
+    <input type="text" id="plant-type" name="plant-type">
+    <div class="plant-type-buttons">
+        <button class="btn-primary" id="add-new-type">Add plant type</button>
+        <button class="btn-secondary" id="modal-cancel">Cancel</button>
+    </div>
+</form>'
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +111,9 @@ require_once 'components/navbar.php' ?>
         </div>
     </div>
 </div>
+
 <?php
-require_once 'components/modal.php' ?>
+echo renderModal($modalTitle, $modalBody);
+?>
 </body>
 </html>

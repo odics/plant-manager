@@ -2,12 +2,23 @@
 
 require_once 'components/navbar.php';
 require_once 'components/card.php';
+require_once 'components/modal.php';
 require_once 'classes/Plant.php';
 require_once 'utils/db_connection.php';
 
 $pdo = getDBConnection();
 $plantCollection = new Plant($pdo);
 $allPlants = $plantCollection->fetchAllPlants();
+$modalTitle = "Delete plant?";
+$modalBody = '<div class="card-text"></div>
+                    <div class="plant-type-buttons">
+                        <form method="POST" action="forms/delete-plant.php" id="delete-plant">
+                            <input type="hidden" value="test" name ="plantID" id="plantID">
+                            <button class="btn-primary" id="delete-plant">Delete</button>
+                            <button class="btn-secondary" id="modal-cancel">Cancel</button>
+                        </form>
+                    </div>
+                </div>'
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +40,8 @@ $allPlants = $plantCollection->fetchAllPlants();
     <link rel="apple-touch-icon" href="images/favicon.png"/>
 
     <script defer src="js/index.js"></script>
+    <script defer src="js/delete-plant.js"></script>
+
     <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap"
@@ -43,7 +56,9 @@ $allPlants = $plantCollection->fetchAllPlants();
 </head>
 <body>
 <?php
-require_once 'components/navbar.php' ?>
+require_once 'components/navbar.php';
+echo renderModal($modalTitle, $modalBody); ?>
+
 <div class="container">
     <?php
     foreach ($allPlants as $plant) {
@@ -52,7 +67,8 @@ require_once 'components/navbar.php' ?>
             $plant['cultivar'],
             $plant['date_planted'],
             $plant['projected_harvest'],
-            $plant['img_src']
+            $plant['img_src'],
+            $plant['id']
         );
     }
     ?>
