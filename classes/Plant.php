@@ -44,7 +44,7 @@ class Plant
 
     public function fetchPlantTypes(): array
     {
-        $query = $this->pdo->prepare("SELECT `id`, `plant_type`, FROM `types_of_plant`;");
+        $query = $this->pdo->prepare("SELECT `id`, `plant_type` FROM `types_of_plant`;");
         $query->execute();
 
         return $query->fetchAll();
