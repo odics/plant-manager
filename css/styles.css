@@ -441,6 +441,30 @@ label {
   gap: 1rem;
 }
 
+.search-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 8rem;
+}
+
+.search-input {
+  display: flex;
+  width: 30rem;
+}
+
+.search-input > select {
+  width: 10rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-input > input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 0;
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     grid-template-columns: 1fr;
