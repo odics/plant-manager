@@ -17,10 +17,12 @@ class Plant
             `plants`.`cultivar`, 
             `plants`.`img_src`, 
             `plants`.`plant_type`,
+            `plants`.`deleted`,
             `types_of_plant`.`plant_type`
             FROM `plants`
             LEFT JOIN `types_of_plant`
-            ON `plants`.`plant_type` = `types_of_plant`.`id`'
+            ON `plants`.`plant_type` = `types_of_plant`.`id`
+            WHERE `plants`.`deleted`="0"'
         );
 
         $query->execute();
@@ -42,7 +44,7 @@ class Plant
 
     public function fetchPlantTypes(): array
     {
-        $query = $this->pdo->prepare("SELECT `id`, `plant_type` FROM `types_of_plant`");
+        $query = $this->pdo->prepare("SELECT `id`, `plant_type`, FROM `types_of_plant`;");
         $query->execute();
 
         return $query->fetchAll();
@@ -83,8 +85,12 @@ class Plant
 
     public function deletePlant($plantID): void
     {
+//        $query = $this->pdo->prepare(
+//            "DELETE FROM `plants` WHERE `id` = '$plantID';"
+//        );
+
         $query = $this->pdo->prepare(
-            "DELETE FROM `plants` WHERE `id` = '$plantID';"
+            "UPDATE `plants` SET `deleted`='1' WHERE `id`='$plantID';"
         );
 
         $query->execute();
