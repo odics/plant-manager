@@ -477,6 +477,14 @@ label {
   background-color: #a7e7c1;
 }
 
+.search-result.no-result {
+  padding: 1rem;
+}
+
+.search-result.no-result span {
+  font-weight: 700;
+}
+
 .result-img {
   width: 6rem;
   height: 6rem;

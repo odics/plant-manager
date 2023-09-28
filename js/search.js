@@ -26,13 +26,17 @@ const searchPlants = (searchTerm) => {
         const results = plants.filter((plant) => {
             return params === "type" ? plant.plant_type.match(regex) : plant.cultivar.match(regex);
         })
-        showSearchResults(results);
+        showSearchResults(results, searchTerm);
     }
 }
 
-const showSearchResults = (results) => {
-    const resultHTML = results.map((result) => {
-        return `<div class="search-result">
+const showSearchResults = (results, searchQuery) => {
+    if (results.length === 0) {
+        resultContainer.innerHTML = `<div class="search-result no-result">
+                                     No results matching&nbsp<span>${searchQuery}</span></div>`;
+    } else {
+        const resultHTML = results.map((result) => {
+            return `<div class="search-result">
         <div class="result-img" style="background-image: url(${result.img_src})">
         </div>
         <div class="result-details">
@@ -46,9 +50,10 @@ const showSearchResults = (results) => {
             </div>
         </div>
     </div>`
-    }).join("")
+        }).join("")
 
-    resultContainer.innerHTML = resultHTML;
+        resultContainer.innerHTML = resultHTML;
+    }
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
