@@ -22,7 +22,8 @@ class Plant
             FROM `plants`
             LEFT JOIN `types_of_plant`
             ON `plants`.`plant_type` = `types_of_plant`.`id`
-            WHERE `plants`.`deleted`="0"'
+            WHERE `plants`.`deleted`="0"
+            ORDER BY `plants`.`id` DESC;'
         );
 
         $query->execute();
@@ -56,7 +57,11 @@ class Plant
             "INSERT INTO `types_of_plant` (`plant_type`) VALUES (?);"
         );
 
-        $query->execute($plantType);
+        $params = [
+            $plantType
+        ];
+
+        $query->execute($params);
     }
 
     public function addNewPlant($plantType, $plantCultivar, $datePlanted, $projectedHarvest, $imgURL): void
