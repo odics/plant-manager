@@ -519,4 +519,26 @@ label {
   .container {
     grid-template-columns: 1fr;
   }
+
+  .search-input {
+    width: 100%;
+    padding: .5rem;
+  }
+
+  .search-input > select {
+    width: auto;
+  }
+
+  .search-result {
+    width: 100%;
+  }
+
+  .result-container {
+    padding: .5rem;
+  }
+
+  .result-cultivar {
+    font-size: 1rem;
+  }
+
 }
