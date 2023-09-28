@@ -7,11 +7,13 @@ function getDaysToHarvest(string $projectedHarvest): string
     $days_to_harvest = $projected_harvest->diff($current_date);
     $date_to_string = $days_to_harvest->format('%m %d');
 
-    if ($date_to_string[0] === "0") {
-        if (substr($date_to_string, -1) <= 1) {
-            return substr($date_to_string, -1) . " DAY";
+    if (explode(" ", $date_to_string)[0] === "0") {
+        if (explode(" ", $date_to_string)[1] == 0) {
+            return explode(" ", $date_to_string)[1] . " DAYS";
+        } else if (explode(" ", $date_to_string)[1] <= 1) {
+            return explode(" ", $date_to_string)[1] . " DAY";
         } else {
-            return substr($date_to_string, -1) . " DAYS";
+            return explode(" ", $date_to_string)[1] . " DAYS";
         }
     } else {
         if (explode(" ", $date_to_string)[1] <= 1) {
