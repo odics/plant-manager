@@ -1,4 +1,5 @@
 <?php
+
 require_once 'components/navbar.php';
 ?>
 
@@ -39,26 +40,15 @@ require_once 'components/navbar.php';
 require_once 'components/navbar.php' ?>
 <div class="search-container">
     <div class="search-input">
-        <select>
-            <option value="name">Plant type</option>
-            <option value="name">Plant cultivar</option>
+        <select id="search-params">
+            <option value="type">Plant type</option>
+            <option value="cultivar">Plant cultivar</option>
         </select>
-        <input type="text" placeholder="Start typing to search...">
+        <input type="text" id="search-input" placeholder="Start typing to search...">
 
     </div>
-    <div class="search-result">
-        <div class="result-img" style="background-image: url(https://i.ebayimg.com/images/g/MKYAAOSwWkddZt70/s-l1600.jpg)">
-        </div>
-        <div class="result-details">
-            <div class="result-name">
-                Tomato
-                <button class="btn-primary">View plant</button>
-            </div>
-            <div class="result-cultivar">
-                <span>Cultivar: Cherry</span>
-                <span>Planted: 2023-10-11</span>
-            </div>
-        </div>
+    <div class="result-container">
+
     </div>
 </div>
 </body>
